@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE Phonebook[
+<!ELEMENT Phonebook (Listing+)>
+<!ELEMENT Listing (First,Last,Phone*,Address+,Email*)>
+<!ELEMENT First (#PCDATA)>
+<!ELEMENT Last (#PCDATA)>
+<!ELEMENT Phone (#PCDATA)>
+<!ATTLIST Phone
+    Type CDATA #REQUIRED>
+<!ELEMENT Address (Street,City,State,Zip)>
+<!ATTLIST Address
+   Type CDATA #REQUIRED>
+<!ELEMENT Street (#PCDATA)>
+<!ELEMENT City (#PCDATA)>
+<!ELEMENT State (#PCDATA)>
+<!ELEMENT Zip (#PCDATA)>
+<!ELEMENT Email (#PCDATA)>
+<!ATTLIST Email
+   Type CDATA #REQUIRED>
+]>
+<Phonebook>
+ <Listing>
+ <First>John</First>
+ <Last>Smith</Last>
+ <Phone Type="Home">1-800-123-4567</Phone>
+ <Address Type="Home">
+ <Street>123 test</Street>
+ <City>Sebastopol</City>
+ <State>California</State>
+ <Zip>12345</Zip>
+ </Address>
+ <Email Type="Home">john@smith.com</Email>
+ </Listing>
+ <Listing>
+ <First>Jane</First>
+ <Last>Smith</Last>
+ <Phone Type="Home">1-800-123-4567</Phone>
+ <Phone Type="Cell">1-217-123-4567</Phone>
+ <Address Type="Work">
+ <Street>1005 Gravenstein Highway North</Street>
+ <City>Sebastopol</City>
+ <State>California</State>
+ <Zip>95472</Zip>
+ </Address>
+ </Listing>
+</Phonebook>
